@@ -1,0 +1,159 @@
+/* Countdown.css - Luxury 4-box wedding countdown */
+
+.countdown-section {
+  position: relative;
+  width: 100%;
+  padding: 16px 16px 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.countdown-card {
+  padding: 32px 18px 28px;
+  background: linear-gradient(180deg, #fff6f8 0%, #ffedf2 100%);
+  border: 1.5px solid #eabac8;
+}
+
+.countdown-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 16px;
+  background: rgba(234, 186, 200, 0.4);
+  border: 1px solid rgba(212, 147, 167, 0.65);
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.cd-star {
+  font-size: 10px;
+  color: #b84668;
+}
+
+.cd-badge-title {
+  font-family: 'Cinzel', serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #8c2442;
+  text-transform: uppercase;
+}
+
+.countdown-event-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #7b1935;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.5px;
+}
+
+/* 4 Countdown Boxes Grid */
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 380px;
+  margin: 0 auto 20px;
+}
+
+.countdown-box-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.box-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #fff2f5 65%, #ffdbe4 100%);
+  border: 1.5px solid #e29db1;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(184, 70, 104, 0.12),
+              inset 0 0 10px rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.box-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #7a1834;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.box-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #9c3c58;
+  text-transform: uppercase;
+}
+
+.countdown-box-item.is-seconds .box-number {
+  color: #a32244;
+}
+
+/* Completed State */
+.countdown-completed-banner {
+  padding: 24px;
+  background: radial-gradient(circle, #fff7f9 0%, #ffeaf0 100%);
+  border: 1.5px solid #d4829a;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+
+.cd-complete-heart {
+  font-size: 34px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cd-complete-text {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #8c2442;
+  margin: 0 0 6px 0;
+  letter-spacing: 2px;
+}
+
+.cd-complete-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #6d3a48;
+  margin: 0;
+}
+
+.countdown-date-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: #8c2442;
+  margin: 0;
+}
+
+.footer-diamond {
+  font-size: 10px;
+  color: #b84668;
+}
+
+@media (max-width: 375px) {
+  .box-number {
+    font-size: 26px;
+  }
+  .countdown-grid {
+    gap: 7px;
+  }
+}

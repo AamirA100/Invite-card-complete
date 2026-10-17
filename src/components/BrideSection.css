@@ -1,0 +1,190 @@
+/* BrideSection.css - Soft pink luxury bride card */
+
+.bride-section {
+  position: relative;
+  width: 100%;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.wedding-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(180deg, #fff5f7 0%, #ffedf2 60%, #ffe8ef 100%);
+  border: 1.5px solid #eabac8;
+  border-radius: 28px;
+  padding: 36px 22px 32px;
+  box-shadow: 0 14px 34px rgba(184, 70, 104, 0.09),
+              0 2px 8px rgba(184, 70, 104, 0.05),
+              inset 0 0 20px rgba(255, 255, 255, 0.8);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-floral-header {
+  width: 160px;
+  margin: 0 auto 12px;
+}
+
+.floral-header-svg {
+  width: 100%;
+  height: auto;
+}
+
+.section-label-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.label-diamond {
+  font-size: 11px;
+  color: #b84668;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #8c2442;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.person-name {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 4px 0 10px;
+  color: #7b1935;
+  text-shadow: 0 2px 8px rgba(184, 70, 104, 0.15);
+}
+
+.bride-display-name {
+  font-size: 40px;
+}
+
+.person-qualification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.qualification-badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #8c2442;
+  background: rgba(234, 186, 200, 0.35);
+  border: 1px solid rgba(212, 147, 167, 0.6);
+  padding: 3px 14px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.person-education,
+.parents-education {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #8c2442;
+  margin: 6px 0 0;
+  letter-spacing: 0.8px;
+  line-height: 1.35;
+}
+
+.person-designation,
+.parents-designation {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #6d414e;
+  margin: 3px 0 0;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+.parent-relation-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 14px 0 12px;
+}
+
+.divider-line {
+  flex: 1;
+  max-width: 65px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d493a7, transparent);
+}
+
+.relation-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #9c3c58;
+}
+
+.parents-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.parents-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #5c1125;
+  margin: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+}
+
+/* Corner Ornaments */
+.card-corner {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  pointer-events: none;
+}
+
+.corner-bl {
+  bottom: 6px;
+  left: 6px;
+}
+
+.corner-br {
+  bottom: 6px;
+  right: 6px;
+}
+
+.corner-ornament-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.corner-ornament-svg.is-mirrored {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 380px) {
+  .bride-display-name {
+    font-size: 34px;
+  }
+  .parents-name {
+    font-size: 18.5px;
+  }
+}

@@ -1,0 +1,148 @@
+/* ComplimentsSection.css - With Best Compliments From & Near & Dear */
+
+.compliments-section {
+  position: relative;
+  width: 100%;
+  padding: 16px 16px 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.compliments-card {
+  padding: 34px 22px 30px;
+  background: linear-gradient(180deg, #fff7fa 0%, #ffedf3 100%);
+  border: 1.5px solid #eabac8;
+  text-align: center;
+}
+
+.compliments-ornament-top {
+  width: 130px;
+  margin: 0 auto 12px;
+}
+
+.compliments-ornament-svg {
+  width: 100%;
+  height: auto;
+}
+
+.compliments-header {
+  margin-bottom: 12px;
+}
+
+.compliments-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #8c2442;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+}
+
+.compliments-title {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #6d152c;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.compliments-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0 24px 0;
+}
+
+.comp-line {
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d493a7, transparent);
+}
+
+.comp-diamond {
+  color: #b84668;
+  font-size: 12px;
+}
+
+/* Vertical Names List */
+.compliments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.compliment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.compliment-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #5c1125;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.compliment-detail {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #9c3c58;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Near & Dear Tagline */
+.near-dear-banner {
+  display: inline-block;
+  padding: 10px 24px;
+  background: rgba(234, 186, 200, 0.4);
+  border: 1.5px solid rgba(212, 147, 167, 0.7);
+  border-radius: 20px;
+  margin: 6px 0 16px 0;
+}
+
+.near-dear-text {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #7b1935;
+  text-transform: uppercase;
+}
+
+.compliments-bottom-flourish {
+  width: 75px;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+.compliments-bottom-flourish svg {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 380px) {
+  .compliments-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .compliment-name {
+    font-size: 19px;
+  }
+  .near-dear-text {
+    font-size: 13.5px;
+    letter-spacing: 3px;
+  }
+}

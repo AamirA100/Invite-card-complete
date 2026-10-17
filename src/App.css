@@ -1,0 +1,272 @@
+/* App.css - Digital Wedding Invitation Design System */
+
+:root {
+  --color-primary: #8c2442;
+  --color-primary-dark: #5c1125;
+  --color-primary-light: #b84668;
+  --color-rose-bg: #fff6f8;
+  --color-rose-card: #ffedf2;
+  --color-border-rose: #eabac8;
+  --color-gold: #df9f62;
+  --color-gold-light: #fbe0b8;
+  --color-text-dark: #4e1222;
+  --color-text-muted: #723c4a;
+  
+  --font-script: 'Great Vibes', 'Allura', cursive;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-serif-heading: 'Cinzel', serif;
+  --font-arabic: 'Amiri', serif;
+  --font-sans: 'Montserrat', 'Poppins', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: pan-y;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #1a040b;
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+/* App Root with Desktop Outer Atmosphere */
+.wedding-app-root {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at center, #2e0815 0%, #150208 70%, #0c0105 100%);
+  overflow-x: hidden;
+}
+
+/* Floating Ambient Rose Petals (Optimized for 60fps GPU Hardware Compositing) */
+.ambient-petals-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+  contain: strict;
+}
+
+.floating-petal {
+  position: absolute;
+  top: -40px;
+  animation: petalSway linear infinite;
+  transform-origin: center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.petal-type-0 {
+  background: radial-gradient(circle at 35% 35%, #ffe6ee 0%, #f69cb4 55%, #c8496c 100%);
+  border-radius: 70% 15% 70% 15% / 75% 25% 75% 25%;
+}
+
+.petal-type-1 {
+  background: radial-gradient(circle at 40% 30%, #fff0f5 0%, #f4a6bc 60%, #b83d5f 100%);
+  border-radius: 50% 50% 50% 15% / 60% 60% 40% 20%;
+}
+
+.petal-type-2 {
+  background: radial-gradient(circle at 30% 40%, #ffedf2 0%, #f8b4c5 50%, #d4597b 100%);
+  border-radius: 65% 35% 65% 35% / 60% 40% 60% 40%;
+}
+
+@keyframes petalSway {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.85);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate3d(var(--sway-x, 25px), 52vh, 0) rotate(180deg) scale(1);
+    opacity: 0.9;
+  }
+  88% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(calc(var(--sway-x, 25px) * -0.5), 105vh, 0) rotate(360deg) scale(0.85);
+    opacity: 0;
+  }
+}
+
+/* The Mobile Portrait Container (Max width 480px, centered on desktop) */
+.invitation-phone-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #3d0918 0%, #fff7f9 12%, #fff3f6 40%, #ffedf2 70%, #fde6ee 100%);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.75), 0 0 20px rgba(184, 70, 104, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Main Long-scrolling Flow */
+.invitation-main-flow {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 18px;
+  padding-bottom: 30px;
+  z-index: 50;
+}
+
+/* Shared Section Layout */
+.invitation-section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .stage-3d-wrapper,
+  .env-3d-wrapper {
+    transform: none !important;
+  }
+  .floating-petal {
+    display: none !important;
+  }
+  .wedding-card > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ============================================================
+   MAGIC CARD LETTERS APPEARANCE EFFECT
+   All white cards (.wedding-card) start blank and reveal their
+   letters and content like a magic card when scrolled into view.
+   ============================================================ */
+
+/* The white card frame */
+.wedding-card:not(.thank-you-card) {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Magic card ethereal shine beam across the card surface */
+.wedding-card:not(.thank-you-card)::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -130%;
+  width: 75%;
+  height: 230%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 30%,
+    rgba(255, 228, 240, 0.75) 50%,
+    rgba(255, 255, 255, 0.4) 70%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 15;
+}
+
+.wedding-card:not(.thank-you-card).card-revealed::after {
+  animation: magicCardShine 1.35s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
+}
+
+@keyframes magicCardShine {
+  0% {
+    left: -130%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    left: 195%;
+    opacity: 0;
+  }
+}
+
+/* Before card is revealed: contents are completely blank */
+.wedding-card:not(.thank-you-card):not(.card-revealed) > *:not(.card-corner) {
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* When revealed: letters & elements magically emerge in staggered cascades */
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner) {
+  animation: magicLetterAppear 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: auto;
+}
+
+/* Staggered delay for cascading top-to-bottom magical inscription */
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(1) { animation-delay: 0.08s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(2) { animation-delay: 0.18s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(3) { animation-delay: 0.28s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(4) { animation-delay: 0.38s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(5) { animation-delay: 0.48s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(6) { animation-delay: 0.58s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(7) { animation-delay: 0.68s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(8) { animation-delay: 0.78s; }
+.wedding-card:not(.thank-you-card).card-revealed > *:not(.card-corner):nth-child(n+9) { animation-delay: 0.88s; }
+
+@keyframes magicLetterAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+    filter: blur(5px);
+  }
+  60% {
+    opacity: 0.9;
+    filter: blur(0.5px);
+    transform: translateY(2px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Selection */
+::selection {
+  background: #f8b6c8;
+  color: #5c1125;
+}

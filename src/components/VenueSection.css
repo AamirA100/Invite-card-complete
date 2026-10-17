@@ -1,0 +1,101 @@
+.venue-section {
+  padding: 60px 24px;
+}
+
+.venue-card {
+  padding: 40px 32px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  border: 1px solid rgba(248, 209, 219, 0.6);
+}
+
+.venue-card::before {
+  background: linear-gradient(90deg, var(--blush-300), var(--rose-400), var(--blush-300));
+  height: 2px;
+}
+
+.venue-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.venue-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose-50), var(--blush-100));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(248, 209, 219, 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.venue-icon svg {
+  width: 44px;
+  height: 44px;
+  color: var(--blush-500);
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--blush-800);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.venue-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blush-400), transparent);
+  margin: 0 auto 24px;
+}
+
+.venue-info {
+  margin-bottom: 28px;
+}
+
+.venue-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.venue-address {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--text-light);
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.location-btn {
+  padding: 16px 40px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.venue-footer {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(248, 209, 219, 0.3);
+}
+
+.venue-footer svg {
+  width: 50px;
+  height: 50px;
+}

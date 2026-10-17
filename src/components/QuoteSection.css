@@ -1,0 +1,78 @@
+.quote-section {
+  padding: 60px 24px;
+}
+
+.quote-card {
+  padding: 48px 32px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  border: 1px solid rgba(248, 209, 219, 0.6);
+}
+
+.quote-card::before {
+  background: linear-gradient(90deg, var(--blush-300), var(--rose-400), var(--blush-300));
+  height: 2px;
+}
+
+.floral-accent {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.floral-accent.bottom {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.arabic-quote {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  font-size: clamp(22px, 5vw, 28px);
+  color: var(--rose-800);
+  line-height: 2;
+  direction: rtl;
+  text-align: center;
+  margin: 24px 0;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(133, 35, 54, 0.1);
+}
+
+.quote-divider {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.divider-flower {
+  animation: flowerRotate 8s linear infinite;
+}
+
+@keyframes flowerRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.english-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(15px, 3vw, 17px);
+  font-style: italic;
+  color: var(--text-medium);
+  line-height: 1.8;
+  margin: 20px 0;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.quote-reference {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blush-600);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 16px;
+  opacity: 0.8;
+}

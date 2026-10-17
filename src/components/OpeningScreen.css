@@ -1,0 +1,303 @@
+/* OpeningScreen.css - Dark luxury invitation preloader */
+
+.opening-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at center, #1b0712 0%, #0d0309 60%, #050103 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px;
+  color: #fff;
+  transition: opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
+  will-change: opacity, transform;
+}
+
+.opening-screen.fade-out {
+  opacity: 0;
+  transform: scale(1.08);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Background Stars & Ambience */
+.opening-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.opening-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #f7d59c;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ffd996, 0 0 12px rgba(255, 217, 150, 0.5);
+  animation: starTwinkle infinite ease-in-out alternate;
+}
+
+@keyframes starTwinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.4);
+  }
+}
+
+.opening-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.75) 100%);
+  pointer-events: none;
+}
+
+/* Centerpiece */
+.opening-centerpiece {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+.opening-bismillah {
+  font-family: 'Amiri', serif;
+  font-size: 26px;
+  color: #e5b382;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 10px rgba(229, 179, 130, 0.4);
+  animation: bismillahGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes bismillahGlow {
+  0% {
+    text-shadow: 0 0 8px rgba(229, 179, 130, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(229, 179, 130, 0.7), 0 0 35px rgba(212, 143, 85, 0.4);
+  }
+}
+
+.opening-subheading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.opening-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(230, 180, 140, 0.6), transparent);
+}
+
+.opening-sub-text {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #dfb28e;
+  text-transform: uppercase;
+}
+
+.opening-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+  line-height: 1.25;
+  color: #fff4e8;
+  margin: 0 0 36px 0;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-shadow: 0 4px 18px rgba(247, 213, 156, 0.35);
+}
+
+.opening-ampersand {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #e5a36f;
+  margin: 2px 0;
+  text-shadow: none;
+}
+
+/* Circular Interactive Button Area */
+.opening-circle-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ring-outer {
+  inset: -12px;
+  border: 1px dashed rgba(229, 179, 130, 0.35);
+  animation: spinSlow 30s linear infinite;
+}
+
+.ring-middle {
+  inset: -2px;
+  border: 1px solid rgba(229, 179, 130, 0.5);
+  animation: pulseRing 3.5s ease-in-out infinite;
+}
+
+.ring-glow {
+  inset: 10px;
+  background: radial-gradient(circle, rgba(193, 45, 71, 0.35) 0%, rgba(229, 179, 130, 0.15) 55%, transparent 75%);
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseRing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+.opening-circle-btn {
+  position: relative;
+  width: 172px;
+  height: 172px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #380e1c 0%, #1e050f 50%, #4a1526 100%);
+  border: 2px solid #e0aa6d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7),
+              0 0 25px rgba(224, 170, 109, 0.35),
+              inset 0 0 18px rgba(255, 230, 200, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.opening-circle-btn:hover {
+  transform: scale(1.05);
+  border-color: #ffd996;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8),
+              0 0 35px rgba(255, 217, 150, 0.6),
+              inset 0 0 25px rgba(255, 230, 200, 0.3);
+}
+
+.opening-circle-btn:active {
+  transform: scale(0.97);
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  color: #ffd996;
+  margin-bottom: 2px;
+  transition: transform 0.3s ease;
+}
+
+.wax-envelope-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.opening-circle-btn:hover .btn-icon {
+  transform: translateY(-2px) scale(1.1);
+}
+
+.btn-main-text {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #fff2e0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.btn-sub-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  color: #dfb28e;
+}
+
+/* Date Notice & Music Hint */
+.opening-date-notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.opening-welcome-text {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #f7d59c;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.opening-blessing-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(232, 197, 211, 0.75);
+  margin: 0;
+}
+
+@media (max-width: 380px) {
+  .opening-names {
+    font-size: 32px;
+  }
+  .opening-circle-wrapper {
+    width: 170px;
+    height: 170px;
+  }
+  .opening-circle-btn {
+    width: 150px;
+    height: 150px;
+  }
+  .btn-main-text {
+    font-size: 11.5px;
+    letter-spacing: 2px;
+  }
+}

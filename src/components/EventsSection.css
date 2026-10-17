@@ -1,0 +1,257 @@
+/* EventsSection.css - Program Details, Nikah, Nikah Dinner, and Valima cards */
+
+.events-section {
+  position: relative;
+  width: 100%;
+  padding: 16px 16px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.events-main-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.events-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: #8c2442;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+}
+
+.eyebrow-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d493a7, transparent);
+}
+
+.events-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #651227;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.events-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #b84668;
+  font-size: 14px;
+}
+
+.divider-dot {
+  width: 4px;
+  height: 4px;
+  background: #b84668;
+  border-radius: 50%;
+}
+
+/* Event Cards Container */
+.event-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.event-card {
+  padding: 32px 22px 28px;
+  background: linear-gradient(180deg, #fff7fa 0%, #ffedf3 100%);
+  border: 1.5px solid #eabac8;
+  border-radius: 26px;
+  text-align: center;
+}
+
+.event-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge-star {
+  color: #b84668;
+  font-size: 12px;
+}
+
+.event-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #7b1935;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Illustrations */
+.event-illustration {
+  width: 170px;
+  margin: 0 auto 20px;
+}
+
+.mosque-illustration {
+  width: 175px;
+}
+
+.hall-illustration {
+  width: 165px;
+}
+
+.mosque-svg,
+.hall-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Event Info List */
+.event-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.event-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.info-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(234, 186, 200, 0.35);
+  border: 1px solid rgba(212, 147, 167, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #8c2442;
+}
+
+.info-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.info-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #a44862;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.info-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #5c1125;
+  line-height: 1.25;
+}
+
+.info-val.time-val {
+  color: #821c38;
+}
+
+.info-val.venue-val {
+  color: #72142d;
+}
+
+.info-subval {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #693e4b;
+  margin-top: 2px;
+}
+
+/* Google Maps Button */
+.maps-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 13px 20px;
+  background: linear-gradient(135deg, #a82e50 0%, #7d1c36 100%);
+  color: #fff;
+  border-radius: 24px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 18px rgba(168, 46, 80, 0.3);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+  box-sizing: border-box;
+}
+
+.maps-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(168, 46, 80, 0.42);
+  background: linear-gradient(135deg, #b8365c 0%, #8c203e 100%);
+  color: #fff;
+}
+
+.maps-button:active {
+  transform: translateY(0);
+}
+
+.btn-pin-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* Event 2: Walima Ceremony Card */
+.event-walima {
+  background: linear-gradient(180deg, #fff7fa 0%, #ffedf3 100%);
+  border: 1.5px solid #eabac8;
+  border-radius: 26px;
+  padding: 32px 22px 28px;
+}
+
+.walima-maps-button {
+  background: linear-gradient(135deg, #a82e50 0%, #7d1c36 100%);
+}
+
+@media (max-width: 380px) {
+  .events-title {
+    font-size: 28px;
+  }
+  .event-heading {
+    font-size: 14.5px;
+  }
+  .maps-button {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+}

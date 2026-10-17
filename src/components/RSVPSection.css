@@ -1,0 +1,172 @@
+/* RSVPSection.css - Interactive RSVP Buttons and Confirmation */
+
+.rsvp-section {
+  position: relative;
+  width: 100%;
+  padding: 16px 16px 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.rsvp-card {
+  padding: 34px 20px 30px;
+  background: linear-gradient(180deg, #fff7fa 0%, #ffedf3 100%);
+  border: 1.5px solid #eabac8;
+  position: relative;
+}
+
+.rsvp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 16px;
+  background: rgba(234, 186, 200, 0.4);
+  border: 1px solid rgba(212, 147, 167, 0.65);
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.rsvp-star {
+  font-size: 10px;
+  color: #b84668;
+}
+
+.rsvp-badge-text {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #8c2442;
+}
+
+.rsvp-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #651227;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.rsvp-subheading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #822a42;
+  margin: 0 0 24px 0;
+}
+
+/* Three Large Buttons */
+.rsvp-buttons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.rsvp-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 20px;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #fff2f6 100%);
+  border: 1.5px solid #df9cb0;
+  border-radius: 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #7b1935;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 14px rgba(184, 70, 104, 0.1),
+              inset 0 0 8px rgba(255, 255, 255, 0.8);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease,
+              background 0.25s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rsvp-action-btn:hover {
+  transform: translateY(-2px);
+  border-color: #c44f72;
+  box-shadow: 0 8px 20px rgba(184, 70, 104, 0.2);
+}
+
+.rsvp-action-btn:active {
+  transform: translateY(0);
+}
+
+.rsvp-action-btn.is-selected {
+  background: linear-gradient(135deg, #a82e50 0%, #7d1c36 100%);
+  color: #ffffff;
+  border-color: #821c38;
+  box-shadow: 0 8px 22px rgba(168, 46, 80, 0.35);
+}
+
+.btn-selected-check {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Confirmation Message Card */
+.rsvp-confirmation-card {
+  margin-top: 24px;
+  padding: 18px 16px;
+  background: radial-gradient(circle, #fff7fa 0%, #fde7ee 100%);
+  border: 1.5px dashed #d4829a;
+  border-radius: 20px;
+  animation: cardFadeUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.confirmation-hearts {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.confirmation-text {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #821c38;
+  letter-spacing: 0.8px;
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+}
+
+.confirmation-subtext {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #723c4a;
+  margin: 0;
+}
+
+@media (max-width: 380px) {
+  .rsvp-heading {
+    font-size: 22px;
+  }
+  .rsvp-action-btn {
+    font-size: 12.5px;
+    padding: 12px 14px;
+  }
+}
