@@ -172,11 +172,11 @@ export default function App() {
           {/* Scratch-to-Discover Wedding Date */}
           <ScratchDate />
 
-          {/* Live Dynamic Countdown Timer */}
-          <Countdown />
-
           {/* Program Details: Nikah & Walima Ceremony Cards */}
           <EventsSection />
+
+          {/* Live Dynamic Countdown Timer */}
+          <Countdown />
 
           {/* Interactive RSVP + Confetti */}
           {/* <RSVPSection /> */}

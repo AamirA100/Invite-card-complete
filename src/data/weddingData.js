@@ -4,7 +4,7 @@ export const weddingData = {
     qualification: "Bachelor of Education",
     parents: "Mr. & Mrs. Mateen Ansari",
     education: "M.Sc , B.Ed",
-    profession: "Teacher at J.M.C.T Nashik"
+    profession: " "
   },
 
   groom: {
@@ -83,11 +83,7 @@ export const weddingData = {
   compliments: {
     heading: "WITH BEST COMPLIMENTS FROM",
     members: [
-      { name: "Akbar Salam Ansari", detail: "Groom's Father" },
-      { name: "Shabana Akbar Ansari", detail: "Groom's Mother" },
-      { name: "Farzana Ansari", detail: "Sister" },
-      { name: "Farheen Ansari", detail: "Sister" }
-    ],
+      { name: "Ansari Family", detail: " " }],
     nearAndDear: "✦ Near & Dear ✦"
   },
 
