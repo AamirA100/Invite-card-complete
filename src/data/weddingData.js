@@ -51,7 +51,7 @@ export const weddingData = {
       id: "walima",
       heading: "✦ DAWAT-E-WALIMA ✦",
       date: "Friday, 25th December 2026",
-      time: "7:00 PM",
+      time: "7:30 PM onwards",
       venue: "Swagat Lawns",
       address: "Sinnar Phata, Nashik road",
       mapsUrl: "https://www.google.com/maps/place/Swagat+Lawns,+Eklahara+road,+sinnar+phata,+Nashik+road/@19.9501913,73.844462,17.25z/data=!4m14!1m7!3m6!1s0x3bddbf0020c4c2a7:0xf739cbc58a842e57!2sSwagat+Lawns,+Eklahara+road,+sinnar+phata,+Nashik+road!8m2!3d19.9501031!4d73.84731!16s%2Fg%2F11z9v5zy98!3m5!1s0x3bddbf0020c4c2a7:0xf739cbc58a842e57!8m2!3d19.9501031!4d73.84731!16s%2Fg%2F11z9v5zy98?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"

@@ -34,7 +34,7 @@ export default function GroomSection() {
         <div className="person-qualification">
           <span className="qualification-badge">{groom.qualification}</span>
           <p className="person-education">{groom.education}</p>
-          <p className="person-designation">{groom.profession}</p>
+          {/* <p className="person-designation">{groom.profession}</p> */}
         </div>
 
         <div className="parent-relation-divider">

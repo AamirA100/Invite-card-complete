@@ -118,7 +118,7 @@ export default function ThankYouEnvelope() {
         </div>
 
         {/* Creator Credit Footer */}
-        {/* <footer className="invitation-footer">
+        <footer className="invitation-footer">
           <div className="footer-credit-card">
             <a
               href="https://www.instagram.com/mazhar.x64?stkn=MTV1dWQ0c3Voc2M3dA=="
@@ -132,7 +132,7 @@ export default function ThankYouEnvelope() {
             </a>
             <p className="creator-tagline">{creator.tagline}</p>
           </div>
-        </footer> */}
+        </footer>
       </div>
     </section>
   )
