@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { weddingData } from '../data/weddingData'
+import { weddingAudio } from '../utils/audioPlayer'
 import './OpeningScreen.css'
 
 export default function OpeningScreen({ onOpen }) {
@@ -8,6 +9,8 @@ export default function OpeningScreen({ onOpen }) {
   const handleOpenClick = () => {
     if (isOpening) return
     setIsOpening(true)
+    // Start audio immediately in direct user gesture callstack to satisfy browser autoplay policy
+    weddingAudio.play()
     // Allow cinematic dissolve/lift animation to play before revealing the stage
     setTimeout(() => {
       onOpen()

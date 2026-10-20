@@ -11,6 +11,7 @@ import EventsSection from './components/EventsSection'
 import RSVPSection from './components/RSVPSection'
 import ComplimentsSection from './components/ComplimentsSection'
 import ThankYouEnvelope from './components/ThankYouEnvelope'
+import MusicButton from './components/MusicButton'
 import { weddingAudio } from './utils/audioPlayer'
 import './App.css'
 
@@ -20,7 +21,12 @@ export default function App() {
   const audioRef = useRef(null)
 
   // Initialize Audio Controller with the local audio element
-   // Keep the page fixed on the opening screen until the visitor clicks
+  useEffect(() => {
+    if (audioRef.current) {
+      weddingAudio.init(audioRef.current)
+    }
+  }, [])
+  // Keep the page fixed on the opening screen until the visitor clicks
   // "Open Invitation". Restore the previous document styles after opening.
   useEffect(() => {
     const html = document.documentElement
@@ -138,17 +144,20 @@ export default function App() {
 
   return (
     <div className="wedding-app-root">
-      {/* Audio Element pointing to audio.mp3 */}
+      {/* Audio Element */}
       <audio
         ref={audioRef}
-        src="/audio/audio.mp3"
+        src="/audio/lords.mp3"
         loop
         preload="auto"
       >
-        <source src="/audio/audio.mp3" type="audio/mpeg" />
-        <source src="/audio.mp3" type="audio/mpeg" />
+        <source src="/audio/lords.mp3" type="audio/mpeg" />
         <source src="/audio/wedding-music.mp3" type="audio/mpeg" />
+        <source src="/audio/audio.mp3" type="audio/mpeg" />
       </audio>
+
+      {/* Floating Audio Control Button */}
+      {isOpened && <MusicButton />}
 
       {/* Cinematic Dark Preloader / Opening Screen */}
       {showPreloader && (

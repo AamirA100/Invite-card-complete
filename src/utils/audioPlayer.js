@@ -56,6 +56,14 @@ class WeddingAudioController {
   }
 
   async play() {
+    // If audioElement wasn't initialized yet, try to auto-find it in DOM
+    if (!this.audioElement && typeof document !== 'undefined') {
+      const el = document.querySelector('audio')
+      if (el) {
+        this.init(el)
+      }
+    }
+
     if (this.audioElement) {
       try {
         this.audioElement.loop = true
@@ -67,21 +75,20 @@ class WeddingAudioController {
           return
         }
       } catch (err) {
-        console.info('Audio play error, using synth fallback:', err.message)
-        this.fallbackToSynth()
+        console.warn('Audio play error:', err.message)
+        this.notify(false)
       }
     } else {
-      this.fallbackToSynth()
+      console.warn('Audio element not found')
+      this.notify(false)
     }
   }
 
   pause() {
-    if (this.audioElement && !this.isUsingSynth) {
+    if (this.audioElement) {
       this.audioElement.pause()
     }
-    if (this.isUsingSynth) {
-      this.stopSynth()
-    }
+    this.stopSynth()
     this.notify(false)
   }
 
@@ -94,9 +101,8 @@ class WeddingAudioController {
   }
 
   fallbackToSynth() {
-    this.isUsingSynth = true
-    this.startSynth()
-    this.notify(true)
+    // Disabled: avoid playing unexpected procedural synth chime sounds
+    this.stopSynth()
   }
 
   startSynth() {
@@ -173,6 +179,13 @@ class WeddingAudioController {
       clearInterval(this.synthInterval)
       this.synthInterval = null
     }
+    if (this.audioContext && this.audioContext.state !== 'closed') {
+      try {
+        this.audioContext.close()
+      } catch (e) {}
+      this.audioContext = null
+    }
+    this.isUsingSynth = false
   }
 }
 
