@@ -16,7 +16,7 @@ export const weddingData = {
   },
 
   wedding: {
-    targetISO: "2026-12-25T19:00:00+05:30"
+    targetISO: "2026-12-25T19:30:00+05:30"
   },
 
   scratch: {

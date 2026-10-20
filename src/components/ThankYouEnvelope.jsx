@@ -85,7 +85,7 @@ export default function ThankYouEnvelope() {
                 <span className="c-rule" />
               </div>
               <p className="card-message-text">{thankYou.message}</p>
-              <p className="card-couple-sign">Aamir Ansari &amp; Tuba Ansari</p>
+              <p className="card-couple-sign">Aamir &amp; Tuba Ansari</p>
             </div>
 
             {/* Open Flap (Folded back in 3D) */}

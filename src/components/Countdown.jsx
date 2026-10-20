@@ -6,7 +6,7 @@ export default function Countdown() {
   const targetDateStr = weddingData.wedding.targetISO
 
   const calculateTimeLeft = () => {
-    const fixedTarget = new Date('2026-12-23T19:00:00+05:30').getTime()
+    const fixedTarget = new Date('2026-12-23T19:30:00+05:30').getTime()
     const now = Date.now()
 
     // If system date is before Sept 18 2026, count down to that moment.
@@ -14,7 +14,7 @@ export default function Countdown() {
     let targetTime = fixedTarget
     if (now >= fixedTarget) {
       const targetYear = new Date(now).getFullYear() + 1
-      targetTime = new Date(`${targetYear}-12-23T19:00:00+05:30`).getTime()
+      targetTime = new Date(`${targetYear}-12-23T19:30:00+05:30`).getTime()
     }
 
     const difference = Math.max(0, targetTime - now)
